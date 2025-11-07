@@ -10,7 +10,7 @@ A complete task management system with teams, authentication, and TypeORM.
 - ✅ Load all tasks with assignee information
 - ✅ Update task status and properties
 - ✅ Full TypeScript type-checking
-- ✅ TypeORM with postgres support
+- ✅ TypeORM with postgreSQL support
 
 ## Installation
 
@@ -20,7 +20,7 @@ npm install
 
 ## Database Setup
 
-1. Create a postgres database named `task_management`
+1. Create a postgreSQL database named `task_management`
 2. Update `.env` file with your database credentials
 
 ## Environment Variables
@@ -150,7 +150,7 @@ curl -X PATCH http://localhost:3000/tasks/TASK_ID \
 
 ## Database Support
 The application supports MySQL, PostgreSQL, and MongoDB. Change the `DB_TYPE` in `.env`:
-- `mysql` (default)
+- `mysql`
 - `postgres`
 - `mongodb`
 
