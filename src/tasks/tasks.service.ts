@@ -18,6 +18,18 @@ export class TasksService {
 
   async create(createTaskDto: CreateTaskDto): Promise<Task> {
     const task = this.tasksRepository.create(createTaskDto);
+     if (createTaskDto.assigneeId) {
+    const teamMember = await this.teamMembersRepository.findOne({
+      where: { id: createTaskDto.assigneeId },
+      relations: ['team'],
+    });
+
+    if (!teamMember) {
+      throw new NotFoundException(`Team member with ID ${createTaskDto.assigneeId} not found`);
+    }
+
+    task.assignee = teamMember;
+  }
     return this.tasksRepository.save(task);
   }
 
