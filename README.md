@@ -110,7 +110,8 @@ curl -X POST http://localhost:3000/tasks \
     "description": "Create JWT-based authentication",
     "dueDate": "2025-12-31",
     "priority": "HIGH",
-    "status": "TODO"
+    "status": "TODO",
+    "assigneeId: "TEAM_MEMBER_ID" (optional)
   }'
 ```
 
